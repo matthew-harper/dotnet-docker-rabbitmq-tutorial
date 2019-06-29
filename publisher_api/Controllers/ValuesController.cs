@@ -6,6 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace publisher_api.Controllers
 {
+    public class PostObject
+    {
+        public string data;
+    }
+
     [Route("api/[controller]")]
     [ApiController]
     public class ValuesController : ControllerBase
@@ -24,10 +29,11 @@ namespace publisher_api.Controllers
             return "value";
         }
 
-        // POST api/values
         [HttpPost]
-        public void Post([FromBody] string value)
+        public IActionResult Post([FromBody] PostObject payload)
         {
+            return Ok("{\"success\": \"true\"}");
+
         }
 
         // PUT api/values/5
