@@ -33,7 +33,7 @@ namespace worker
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Posting a message!");
             PostMessage("test message").Wait();
         }
     }
