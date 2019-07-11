@@ -7,15 +7,11 @@ using Newtonsoft.Json;
 
 namespace worker
 {
-    public class PostObject
-    {
-        public string data;
-    }
     class Program
     {
     public static async Task PostMessage(string postData)
     {
-        var json = JsonConvert.SerializeObject(new PostObject {data = postData});
+        var json = JsonConvert.SerializeObject(postData);
         var content = new StringContent(json, UnicodeEncoding.UTF8, "application/json");
         
         using (var httpClientHandler = new HttpClientHandler())

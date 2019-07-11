@@ -6,11 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace publisher_api.Controllers
 {
-    public class PostObject
-    {
-        public string data;
-    }
-
     [Route("api/[controller]")]
     [ApiController]
     public class ValuesController : ControllerBase
@@ -30,7 +25,7 @@ namespace publisher_api.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] PostObject payload)
+        public IActionResult Post([FromBody] string payload)
         {
             return Ok("{\"success\": \"true\"}");
 
