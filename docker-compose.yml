@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  publisher_api:
+    image: my_publisher_api:latest
+    build:
+      context: ./publisher_api
+      dockerfile: Dockerfile
+
+  worker:
+    image: my_worker:latest
+    depends_on:
+      - "publisher_api"
+    build:
+      context: ./worker
+      dockerfile: Dockerfile

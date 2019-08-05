@@ -19,7 +19,7 @@ namespace worker
             httpClientHandler.ServerCertificateCustomValidationCallback = (message, cert, chain, errors) => { return true; };
             using (var client = new HttpClient(httpClientHandler))
             {
-                var result = await client.PostAsync("https://localhost:5001/api/Values", content);
+                var result = await client.PostAsync("http://publisher_api:80/api/Values", content);
                 string resultContent = await result.Content.ReadAsStringAsync();
                 Console.WriteLine("Server returned: " + resultContent);
             }
