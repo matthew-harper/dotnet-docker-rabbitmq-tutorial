@@ -2,11 +2,9 @@ version: '3.4'
 
 services:
   publisher_api:
-    image: my_publisher_api:latest
     build: ./publisher_api
 
   worker:
-    image: my_worker:latest
+    build: ./worker
     depends_on:
       - "publisher_api"
-    build: ./worker
