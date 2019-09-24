@@ -3,9 +3,10 @@ version: '3.4'
 services:
   publisher_api:
     build: ./publisher_api
-
+    restart: always
   worker:
     build: ./worker
+    restart: always
     depends_on:
       - "publisher_api"
       - "rabbitmq"
